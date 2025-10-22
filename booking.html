@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flight Booking</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/5199b220a4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="booking.css">
+</head>
+
+<body class="bg-light">
+    
+
+    <div class="container-fluid py-3">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="booking-container">
+                    <div class="trip-type">
+                        <button class="trip-btn active">Return</button>
+                        <button class="trip-btn">One-way</button>
+                        <button class="trip-btn">Multi-city</button>
+                    </div>
+        
+                    <div class="booking-form">
+                        <div class="form-group">
+                            <label>From</label>
+                            <div class="location-input">
+                                <input type="text" value="Hyderabad (HYD)" readonly>
+                            </div>
+                            <span class="close-icon"><i class="fa-solid fa-xmark"></i></span>
+                            <button class="add-location-btn"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+        
+                        <button class="swap-btn"><i class="fa-solid fa-right-left"></i></button>
+        
+                        <div class="form-group">
+                            <label>To</label>
+                            <div class="location-input">
+                                <input type="text" value="New Delhi (DEL)" readonly>
+                            </div>
+                            <span class="close-icon">×</span>
+                            <button class="add-location-btn">+</button>
+                        </div>
+        
+                        <div class="form-group date-field">
+                            <label><i class="fa-regular fa-calendar-days"></i></label>
+                            <input type="text" value="Tue 15/7" readonly>
+                            <div class="date-nav">
+                                <button class="date-arrow"><i class="fa-solid fa-angle-left"></i></button>
+                                <button class="date-arrow"><i class="fa-solid fa-angle-right"></i></button>
+                            </div>
+                        </div>
+        
+                        <div class="form-group date-field">
+                            <label><i class="fa-regular fa-calendar-days "></i></label>
+                            <input type="text" value="Sat 19/7" readonly>
+                            <div class="date-nav">
+                                <button class="date-arrow">‹</button>
+                                <button class="date-arrow">›</button>
+                            </div>
+                        </div>
+        
+                        <div class="form-group">
+                            <label>👤</label>
+                            <input type="text" value="2 travellers, Economy" readonly>
+                        </div>
+        
+                        <button class="update-btn"><i class="fa-solid fa-magnifying-glass"></i> Update</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 ">
+                <div class="book text-white p-3 rounded-lg mb-4" style="background-color:#07183d;">
+                    <div class="row">
+                        <div class="col-lg-4 mb-3 mb-md-0 pt-3">
+                            <p>Departure • IndiGo</p>
+                            <div class="d-flex align-items-center justify-content-between flex-wrap">
+                                <div class="d-flex align-items-center">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAP1BMVEVHcEwAG5QAG5QAG5QAG5QAG5SvuN7v8fgQKZuAjcq/xuSfqtff4/IwRqj///9wf8OPm9AgOKFQYrVAVK9gcbyCv35SAAAABnRSTlMAIJ/v/zBdB4MkAAAAwElEQVR4AYWTQRLDIAwDSVCJTYpdcP7/1ubAKcSw59UIBhRC2PaIV+K+hZtPhEv83PmICXELO6bsIWJKDPBIB+HGFzhhJuQDmApnHoXjW+RU0VNKOoBRSL+ateWmufZ+p4IMtcyEJJbFF8gskZ6+wGJAU08gsx8BXkXPA3a9C6TGhBvvmiy9e6i4jLQS9zxA9SFINmEWRuf8PgRtxIWY0Hl/i8IVI2E4oi+QYS60bHNB5cLI8tsvh7Oc3nK8y/n/AZpFE8GyxGDiAAAAAElFTkSuQmCC" class="image mr-2" width="35">
+                                    <p class="mb-0 time">12:00 <i class="fa-solid fa-arrow-right arrow"></i> 14:25</p>
+                                </div>
+                                <p class="mb-0 font-weight-bold"><i class="fa-solid fa-indian-rupee-sign"></i> 3,550</p>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-lg-4 pt-3">
+                            <p>Return • IndiGo</p>
+                            <div class="d-flex align-items-center justify-content-between flex-wrap">
+                                <div class="d-flex align-items-center">
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAP1BMVEVHcEwAG5QAG5QAG5QAG5QAG5SvuN7v8fgQKZuAjcq/xuSfqtff4/IwRqj///9wf8OPm9AgOKFQYrVAVK9gcbyCv35SAAAABnRSTlMAIJ/v/zBdB4MkAAAAwElEQVR4AYWTQRLDIAwDSVCJTYpdcP7/1ubAKcSw59UIBhRC2PaIV+K+hZtPhEv83PmICXELO6bsIWJKDPBIB+HGFzhhJuQDmApnHoXjW+RU0VNKOoBRSL+ateWmufZ+p4IMtcyEJJbFF8gskZ6+wGJAU08gsx8BXkXPA3a9C6TGhBvvmiy9e6i4jLQS9zxA9SFINmEWRuf8PgRtxIWY0Hl/i8IVI2E4oi+QYS60bHNB5cLI8tsvh7Oc3nK8y/n/AZpFE8GyxGDiAAAAAElFTkSuQmCC" class="image mr-2" width="35">
+                                    <p class="mb-0 time">20:15 <i class="fa-solid fa-arrow-right arrow"></i> 22:30</p>
+                                </div>
+                                <p class="mb-0 font-weight-bold"><i class="fa-solid fa-indian-rupee-sign"></i> 3,599</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 text-center text-md-left">
+                            <p class="rupee mb-1"><i class="fa-solid fa-indian-rupee-sign"></i><span id="strike_price" style="font-size:18px;">7,149</span></p>
+                            <p><i class="fa-solid fa-indian-rupee-sign"></i> 6,834
+                            </p>
+                            <p class="text-secondary mb-1">Per Adult</p>
+                            <p class="text-success mb-0">Return discount applied: ₹315</p>
+                        </div>
+                        <div class="col-lg-2 text-center text-md-right">
+                            <button class="book-but bg-primary text-white mb-2">BOOK NOW</button><br>
+                            <button class="price-but text-white">LOOK PRICE</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 mb-3" id="flight-card">
+                        <div class="card p-3 shadow-sm">
+                            <div class="d-flex align-items-center mb-3 IndiGo">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAP1BMVEVHcEwAG5QAG5QAG5QAG5QAG5SvuN7v8fgQKZuAjcq/xuSfqtff4/IwRqj///9wf8OPm9AgOKFQYrVAVK9gcbyCv35SAAAABnRSTlMAIJ/v/zBdB4MkAAAAwElEQVR4AYWTQRLDIAwDSVCJTYpdcP7/1ubAKcSw59UIBhRC2PaIV+K+hZtPhEv83PmICXELO6bsIWJKDPBIB+HGFzhhJuQDmApnHoXjW+RU0VNKOoBRSL+ateWmufZ+p4IMtcyEJJbFF8gskZ6+wGJAU08gsx8BXkXPA3a9C6TGhBvvmiy9e6i4jLQS9zxA9SFINmEWRuf8PgRtxIWY0Hl/i8IVI2E4oi+QYS60bHNB5cLI8tsvh7Oc3nK8y/n/AZpFE8GyxGDiAAAAAElFTkSuQmCC" class="logo">
+                                <p class="ml-2 font-weight-bold h5 mb-0">IndiGo</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                <div>
+                                    <h5 class="mb-1" style="font-weight:bold;">05:25</h5>
+                                    <p class="mb-0 font-weight-bold">Hyderabad</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="mb-1 small">02 h 10 m</p>
+                                    <hr class="my-1">
+                                    <p class="mb-0 small">Non Stop</p>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1" style="font-weight:bold;">07:35</h5>
+                                    <p class="mb-0 font-weight-bold">New Delhi</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="font-weight-bold mb-0"><i class="fa-solid fa-indian-rupee-sign"></i> 3,550</p>
+                                    <p class="small mb-0 text-secondary">Per adult</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mb-3" id="flight-card">
+                        <div class="card p-3 shadow-sm">
+                            <div class="d-flex align-items-center mb-3 IndiGo">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAP1BMVEVHcEwAG5QAG5QAG5QAG5QAG5SvuN7v8fgQKZuAjcq/xuSfqtff4/IwRqj///9wf8OPm9AgOKFQYrVAVK9gcbyCv35SAAAABnRSTlMAIJ/v/zBdB4MkAAAAwElEQVR4AYWTQRLDIAwDSVCJTYpdcP7/1ubAKcSw59UIBhRC2PaIV+K+hZtPhEv83PmICXELO6bsIWJKDPBIB+HGFzhhJuQDmApnHoXjW+RU0VNKOoBRSL+ateWmufZ+p4IMtcyEJJbFF8gskZ6+wGJAU08gsx8BXkXPA3a9C6TGhBvvmiy9e6i4jLQS9zxA9SFINmEWRuf8PgRtxIWY0Hl/i8IVI2E4oi+QYS60bHNB5cLI8tsvh7Oc3nK8y/n/AZpFE8GyxGDiAAAAAElFTkSuQmCC" class="logo">
+                                <p class="ml-2 font-weight-bold h5 mb-0">IndiGo</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                <div>
+                                    <h5 class="mb-1" style="font-weight:bold;">08:40</h5>
+                                    <p class="mb-0 font-weight-bold">Hyderabad</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="mb-1 small">02 h 05 m</p>
+                                    <hr class="my-1">
+                                    <p class="mb-0 small">Non Stop</p>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1" style="font-weight:bold;">10:45</h5>
+                                    <p class="mb-0 font-weight-bold">New Delhi</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="font-weight-bold mb-0"><i class="fa-solid fa-indian-rupee-sign"></i> 3,699</p>
+                                    <p class="small mb-0 text-secondary">Per adult</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 mb-3" id="flight-card">
+                        <div class="card p-3 shadow-sm">
+                            <div class="d-flex align-items-center mb-3 IndiGo">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAP1BMVEVHcEwAG5QAG5QAG5QAG5QAG5SvuN7v8fgQKZuAjcq/xuSfqtff4/IwRqj///9wf8OPm9AgOKFQYrVAVK9gcbyCv35SAAAABnRSTlMAIJ/v/zBdB4MkAAAAwElEQVR4AYWTQRLDIAwDSVCJTYpdcP7/1ubAKcSw59UIBhRC2PaIV+K+hZtPhEv83PmICXELO6bsIWJKDPBIB+HGFzhhJuQDmApnHoXjW+RU0VNKOoBRSL+ateWmufZ+p4IMtcyEJJbFF8gskZ6+wGJAU08gsx8BXkXPA3a9C6TGhBvvmiy9e6i4jLQS9zxA9SFINmEWRuf8PgRtxIWY0Hl/i8IVI2E4oi+QYS60bHNB5cLI8tsvh7Oc3nK8y/n/AZpFE8GyxGDiAAAAAElFTkSuQmCC" class="logo">
+                                <p class="ml-2 font-weight-bold h5 mb-0">IndiGo</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                <div>
+                                    <h5 class="mb-1" style="font-weight:bold;">12:00</h5>
+                                    <p class="mb-0 font-weight-bold">Hyderabad</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="mb-1 small">02 h 25 m</p>
+                                    <hr class="my-1">
+                                    <p class="mb-0 small">Non Stop</p>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1" style="font-weight:bold;">14:35</h5>
+                                    <p class="mb-0 font-weight-bold">New Delhi</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="font-weight-bold mb-0"><i class="fa-solid fa-indian-rupee-sign"></i> 3,550</p>
+                                    <p class="small mb-0 text-secondary">Per adult</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mb-3" id="flight-card">
+                        <div class="card p-3 shadow-sm">
+                            <div class="d-flex align-items-center mb-3 IndiGo">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAP1BMVEVHcEwAG5QAG5QAG5QAG5QAG5SvuN7v8fgQKZuAjcq/xuSfqtff4/IwRqj///9wf8OPm9AgOKFQYrVAVK9gcbyCv35SAAAABnRSTlMAIJ/v/zBdB4MkAAAAwElEQVR4AYWTQRLDIAwDSVCJTYpdcP7/1ubAKcSw59UIBhRC2PaIV+K+hZtPhEv83PmICXELO6bsIWJKDPBIB+HGFzhhJuQDmApnHoXjW+RU0VNKOoBRSL+ateWmufZ+p4IMtcyEJJbFF8gskZ6+wGJAU08gsx8BXkXPA3a9C6TGhBvvmiy9e6i4jLQS9zxA9SFINmEWRuf8PgRtxIWY0Hl/i8IVI2E4oi+QYS60bHNB5cLI8tsvh7Oc3nK8y/n/AZpFE8GyxGDiAAAAAElFTkSuQmCC" class="logo">
+                                <p class="ml-2 font-weight-bold h5 mb-0">IndiGo</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                <div>
+                                    <h5 class="mb-1" style="font-weight:bold;">21:40</h5>
+                                    <p class="mb-0 font-weight-bold">Hyderabad</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="mb-1 small">02 h 35 m</p>
+                                    <hr class="my-1">
+                                    <p class="mb-0 small">Non Stop</p>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1" style="font-weight:bold;">00:45</h5>
+                                    <p class="mb-0 font-weight-bold">New Delhi</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="font-weight-bold mb-0"><i class="fa-solid fa-indian-rupee-sign"></i> 3,699</p>
+                                    <p class="small mb-0 text-secondary">Per adult</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 mb-3" id="flight-card">
+                        <div class="card p-3 shadow-sm">
+                            <div class="d-flex align-items-center mb-3 IndiGo">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAP1BMVEVHcEwAG5QAG5QAG5QAG5QAG5SvuN7v8fgQKZuAjcq/xuSfqtff4/IwRqj///9wf8OPm9AgOKFQYrVAVK9gcbyCv35SAAAABnRSTlMAIJ/v/zBdB4MkAAAAwElEQVR4AYWTQRLDIAwDSVCJTYpdcP7/1ubAKcSw59UIBhRC2PaIV+K+hZtPhEv83PmICXELO6bsIWJKDPBIB+HGFzhhJuQDmApnHoXjW+RU0VNKOoBRSL+ateWmufZ+p4IMtcyEJJbFF8gskZ6+wGJAU08gsx8BXkXPA3a9C6TGhBvvmiy9e6i4jLQS9zxA9SFINmEWRuf8PgRtxIWY0Hl/i8IVI2E4oi+QYS60bHNB5cLI8tsvh7Oc3nK8y/n/AZpFE8GyxGDiAAAAAElFTkSuQmCC" class="logo">
+                                <p class="ml-2 font-weight-bold h5 mb-0">IndiGo</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                <div>
+                                    <h5 class="mb-1" style="font-weight:bold;">21:25</h5>
+                                    <p class="mb-0 font-weight-bold">Hyderabad</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="mb-1 small">02 h 20 m</p>
+                                    <hr class="my-1">
+                                    <p class="mb-0 small">Non Stop</p>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1" style="font-weight:bold;">00:00</h5>
+                                    <p class="mb-0 font-weight-bold">New Delhi</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="font-weight-bold mb-0" style="font-weight:bold;"> <i class="fa-solid fa-indian-rupee-sign"></i> 3,550</p>
+                                    <p class="small mb-0 text-secondary">Per adult</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mb-3" id="flight-card">
+                        <div class="card p-3 shadow-sm">
+                            <div class="d-flex align-items-center mb-3 IndiGo">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAP1BMVEVHcEwAG5QAG5QAG5QAG5QAG5SvuN7v8fgQKZuAjcq/xuSfqtff4/IwRqj///9wf8OPm9AgOKFQYrVAVK9gcbyCv35SAAAABnRSTlMAIJ/v/zBdB4MkAAAAwElEQVR4AYWTQRLDIAwDSVCJTYpdcP7/1ubAKcSw59UIBhRC2PaIV+K+hZtPhEv83PmICXELO6bsIWJKDPBIB+HGFzhhJuQDmApnHoXjW+RU0VNKOoBRSL+ateWmufZ+p4IMtcyEJJbFF8gskZ6+wGJAU08gsx8BXkXPA3a9C6TGhBvvmiy9e6i4jLQS9zxA9SFINmEWRuf8PgRtxIWY0Hl/i8IVI2E4oi+QYS60bHNB5cLI8tsvh7Oc3nK8y/n/AZpFE8GyxGDiAAAAAElFTkSuQmCC" class="logo">
+                                <p class="ml-2 font-weight-bold h5 mb-0">IndiGo</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                <div>
+                                    <h5 class="mb-1" style="font-weight:bold;">05:25</h5>
+                                    <p class="mb-0 font-weight-bold">Hyderabad</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="mb-1 small">02 h 10 m</p>
+                                    <hr class="my-1">
+                                    <p class="mb-0 small">Non Stop</p>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1" style="font-weight:bold;">07:35</h5>
+                                    <p class="mb-0 font-weight-bold">New Delhi</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="font-weight-bold mb-0"><i class="fa-solid fa-indian-rupee-sign"></i> 3,699</p>
+                                    <p class="small mb-0 text-secondary">Per adult</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 mb-3" id="flight-card">
+                        <div class="card p-3 shadow-sm">
+                            <div class="d-flex align-items-center mb-3 IndiGo">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAP1BMVEVHcEwAG5QAG5QAG5QAG5QAG5SvuN7v8fgQKZuAjcq/xuSfqtff4/IwRqj///9wf8OPm9AgOKFQYrVAVK9gcbyCv35SAAAABnRSTlMAIJ/v/zBdB4MkAAAAwElEQVR4AYWTQRLDIAwDSVCJTYpdcP7/1ubAKcSw59UIBhRC2PaIV+K+hZtPhEv83PmICXELO6bsIWJKDPBIB+HGFzhhJuQDmApnHoXjW+RU0VNKOoBRSL+ateWmufZ+p4IMtcyEJJbFF8gskZ6+wGJAU08gsx8BXkXPA3a9C6TGhBvvmiy9e6i4jLQS9zxA9SFINmEWRuf8PgRtxIWY0Hl/i8IVI2E4oi+QYS60bHNB5cLI8tsvh7Oc3nK8y/n/AZpFE8GyxGDiAAAAAElFTkSuQmCC" class="logo">
+                                <p class="ml-2 font-weight-bold h5 mb-0">IndiGo</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                <div>
+                                    <h5 class="mb-1" style="font-weight:bold;">21:25</h5>
+                                    <p class="mb-0 font-weight-bold">Hyderabad</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="mb-1 small">02 h 10 m</p>
+                                    <hr class="my-1">
+                                    <p class="mb-0 small">Non Stop</p>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1" style="font-weight:bold;">00:05</h5>
+                                    <p class="mb-0 font-weight-bold">New Delhi</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="font-weight-bold mb-0"><i class="fa-solid fa-indian-rupee-sign"></i> 3,550</p>
+                                    <p class="small mb-0 text-secondary">Per adult</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mb-3" id="flight-card">
+                        <div class="card p-3 shadow-sm">
+                            <div class="d-flex align-items-center mb-3 IndiGo">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAP1BMVEVHcEwAG5QAG5QAG5QAG5QAG5SvuN7v8fgQKZuAjcq/xuSfqtff4/IwRqj///9wf8OPm9AgOKFQYrVAVK9gcbyCv35SAAAABnRSTlMAIJ/v/zBdB4MkAAAAwElEQVR4AYWTQRLDIAwDSVCJTYpdcP7/1ubAKcSw59UIBhRC2PaIV+K+hZtPhEv83PmICXELO6bsIWJKDPBIB+HGFzhhJuQDmApnHoXjW+RU0VNKOoBRSL+ateWmufZ+p4IMtcyEJJbFF8gskZ6+wGJAU08gsx8BXkXPA3a9C6TGhBvvmiy9e6i4jLQS9zxA9SFINmEWRuf8PgRtxIWY0Hl/i8IVI2E4oi+QYS60bHNB5cLI8tsvh7Oc3nK8y/n/AZpFE8GyxGDiAAAAAElFTkSuQmCC" class="logo">
+                                <p class="ml-2 font-weight-bold h5 mb-0">IndiGo</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                                <div>
+                                    <h5 class="mb-1" style="font-weight:bold;">05:25</h5>
+                                    <p class="mb-0 font-weight-bold">Hyderabad</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="mb-1 small">02 h 05 m</p>
+                                    <hr class="my-1">
+                                    <p class="mb-0 small">Non Stop</p>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1" style="font-weight:bold;">07:35</h5>
+                                    <p class="mb-0 font-weight-bold">New Delhi</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="font-weight-bold mb-0"><i class="fa-solid fa-indian-rupee-sign"></i> 3,699</p>
+                                    <p class="small mb-0 text-secondary">Per adult</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-3 mt-3 mt-md-0">
+                <div class="bg-white p-3 shadow-sm rounded">
+                    <div class="d-flex justify-content-between align-items-center mb-2 ">
+                        <h5 class="mb-0" style="font-weight:bold;">Travel Assistant</h5>
+                        <i class="fa-regular fa-pen-to-square"></i>
+                    </div>
+                    <ol class="mb-0">
+                        <li>Your selected IndiGo flights are highly recommended.</li>
+                        <li>Your selected return flight is regularly 90% on time</li>
+                        <li>Your arrival flights reached at 10 am would help you reach hotel at perfect check-in time</li>
+                        <li>19th friday the you arrival delhi weather is below</li>
+                        <li>18 degree and high chances of rain</li>
+                    </ol>
+                    <div class="d-flex flex-row mb-2 mt-3 ">
+                        <i class="fa-solid fa-magnifying-glass mt-2"></i>
+                        <h5 class="mb-0 pl-3" style="font-weight:bold;">Next Steps</h5>
+                    </div>
+                    <ul class="mb-0">
+                        <li>Decide on <span style="font-weight:bold;">one-way vs round-way </span>and your prefered dates.</li>
+                        <li>Use fare trackers on <span style="font-weight:bold;">MakeMyTrip/Goibibo /Kayak/Expedia</span>- they alert yo to price drop</li>
+                        <li>Book flights <span style="font-weight:bold;">2-4 weeks in advance</span></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
